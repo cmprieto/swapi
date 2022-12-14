@@ -1,15 +1,18 @@
-import { createContext, useState } from 'react';
+import { createContext, useState } from "react";
 
 const Provider = ({ children }) => {
-    const [Characters, setCharacters] = useState([]);
-    const [currPage, setCurrPage] = useState(5);
+  /* const [Starships, setStarshisps] = useState([]); */
 
-    return (
-        <AppContext.Provider value={[Characters, setCharacters, currPage, setCurrPage]}>
-            {children}
-        </AppContext.Provider>
-    );
-}
+  const [Characters, setCharacters] = useState([]);
+  const [TotalNumberItemsPages, setTotalNumberItemsPages] = useState(1);
+
+  return (
+    <AppContext.Provider
+      value={[Characters, setCharacters, TotalNumberItemsPages, setTotalNumberItemsPages]}>
+      {children}
+    </AppContext.Provider>
+  );
+};
 
 export default Provider;
 export const AppContext = createContext();

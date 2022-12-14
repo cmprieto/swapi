@@ -1,27 +1,24 @@
 import React, { Fragment, useState } from "react";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AppContext } from "../application/provider.js";
-import { Ul } from "../styled.js";
+import { Title, Ul, linkStyle } from "../styled.js";
 import { Link } from "react-router-dom";
 import "../App.css";
+import { Pagination } from "./pagination.js";
 
 const Characters = () => {
   const [Characters] = useContext(AppContext);
-  const [controlPage, setControlPage] = useState(1);
 
   let direccion, ids, control;
 
-
-
-  const handleNextPage = () => {
-    let suma = controlPage + 1;
-    setControlPage(suma);
-  };
+  /*   if(loading){
+    return <Title>Loading...</Title>;
+  } */
 
   return (
     <Fragment>
       <Ul>
-        {Characters &&
+        {Characters && 
           Characters.map((e) => {
             /*EXTRAER ID DE URL DE api*/
             direccion = e.url;
@@ -35,12 +32,11 @@ const Characters = () => {
 
             return (
               <li key={e.url}>
-                <Link to={`/character/${ids}`} state={e}>
+                <Link to={`/character/${ids}`} state={e} style={linkStyle}>
                   {console.log(e)}
                   <div className="card">
-
                     {/*ESTILOS EN app.css -> pasarlos a styledcomp*/}
-                    <img
+                    <img id="foto"
                       src={
                         "https://starwars-visualguide.com/assets/img/characters/" +
                         ids +
@@ -57,9 +53,7 @@ const Characters = () => {
             );
           })}
       </Ul>
-      <button onClick={handleNextPage}>
-        <p>Cargar más personajes</p>
-      </button>
+      <Pagination />
     </Fragment>
   );
 };

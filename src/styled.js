@@ -6,12 +6,16 @@ import img from "./img/background.jpg";
 export const GlobalStyle = createGlobalStyle`
 
 	body {
+    /* box-sizing: content-box; */
     background-color: black;
     background-image: url("http://www.script-tutorials.com/demos/360/images/stars.png");
+    /* max-width: 100vh; */
     /* 
     http://www.script-tutorials.com/demos/360/images/stars.png
 		background-image: url(${img}); */
-    margin:3rem;
+    margin:2rem;
+    text-align: center;
+    margin: auto;
 	}`;
 /*   @font-face {
   font-family: 'Roboto Condensed';
@@ -140,4 +144,10 @@ export const Nav = styled.nav`
   .active {
     color: #81d4fa;
   }
+  
 `;
+
+export const linkStyle = {
+  margin: "1rem",
+  textDecoration: "none",
+};

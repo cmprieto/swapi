@@ -1,9 +1,11 @@
 import React from "react";
 import Provider from "./application/provider";
-import { GlobalStyle } from "./styled";
+import { GlobalStyle, Title } from "./styled";
 import "./App.css";
-import Router from "./application/router";
-
+import { Swapi } from "./services/swapi";
+import { StarShips } from "./components/starships";
+import Router from "./application/routes";
+import NavBar from "./components/Navbar";
 
 function App() {
   return (

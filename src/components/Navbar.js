@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { Nav } from "../styled";
 
 const Menu = () => {
@@ -11,11 +11,14 @@ const Menu = () => {
         <li>
           <NavLink to="/page2">Page2</NavLink>
         </li>
-        <li>
+        {/* <li>
+          <Link to="/:id">Id</Link>
+        </li> */}
+       <li>
           <NavLink to="/ajksdfkjhasdk">Error en la url</NavLink>
-        </li>
+        </li> 
       </ul>
     </Nav>
   );
 };
-export { Menu };
+export {Menu};

@@ -1,0 +1,24 @@
+import React, { Fragment, useState } from "react";
+import { useContext, useEffect } from "react";
+
+const Pagination = (postsPerPage, totalPosts) => {
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
+  return (
+    <div>
+      <ul /* className="pagination" */>
+        {pageNumbers.map((number) => (
+          <li key={number} /* className="page-item" */>
+            <a href="!#" /* className="page-link" */>
+              {number}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+export { Pagination };
