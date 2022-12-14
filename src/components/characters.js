@@ -4,11 +4,10 @@ import { AppContext } from "../application/provider.js";
 import { Title, Ul, linkStyle } from "../styled.js";
 import { Link } from "react-router-dom";
 import "../App.css";
-import { Pagination } from "./pagination.js";
+
 
 const Characters = () => {
   const [Characters] = useContext(AppContext);
-
   let direccion, ids, control;
 
   /*   if(loading){
@@ -53,7 +52,7 @@ const Characters = () => {
             );
           })}
       </Ul>
-      <Pagination />
+
     </Fragment>
   );
 };

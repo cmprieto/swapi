@@ -2,8 +2,8 @@ import React, { Fragment } from "react";
 import { useLocation } from "react-router-dom";
 import { Card, Ul2 } from "../styled.js";
 import { useParams } from "react-router-dom";
-import { Menu } from "../components/Navbar";
 import "../App.css";
+import { Menu } from "../components/Navbar";
 
 const CharactersCard = () => {
   const location = useLocation();
@@ -11,12 +11,13 @@ const CharactersCard = () => {
   const personaje = location.state;
 
   const { id } = useParams();
-  
+
   return (
     <Fragment>
       <Menu />
 
       <Card>
+        <br />
         <img
           src={
             "https://starwars-visualguide.com/assets/img/characters/" +
@@ -29,6 +30,7 @@ const CharactersCard = () => {
         ></img>
 
         <div>
+          <br />
           <Ul2>
             <li>{personaje.name}</li>
             <br />

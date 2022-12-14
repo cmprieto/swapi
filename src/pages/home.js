@@ -5,14 +5,15 @@ import { Fragment } from "react";
 import Provider from "../application/provider";
 import { Title } from "../styled";
 import { Characters } from "../components/characters";
+import { Header } from "../components/header";
 
 const Home=()=> {
   return (
     <Fragment>
       <Provider>
-        <Menu />
+        <Header />
         <Swapi />
-        <Title>STAR WARS</Title>
+        
         <Characters />
       </Provider>
     </Fragment>

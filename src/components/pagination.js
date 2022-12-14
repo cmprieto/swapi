@@ -2,7 +2,7 @@ import ReactPaginate from "react-paginate";
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { AppContext } from "../application/provider.js";
-
+import "../App.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -26,21 +26,22 @@ const Pagination = () => {
     console.log(currentPage);
     const characterFormServer = await fetchCharacters(currentPage);
     setCharacters(characterFormServer);
-    navigate(`../page/${currentPage}`, { replace: true });    //SE DEFINE LA PAGINA DESTINO COMO SI FUERA UN LINK PERO SIN COMPONENTES SINO FUNCIONAL O ALGO ASI // SINO SE PONE URL NO VARIA AUNQUE CLIQUES EN PAGINADOR
+    navigate(`../characters/${currentPage}`, { replace: true });    //SE DEFINE LA PAGINA DESTINO COMO SI FUERA UN LINK PERO SIN COMPONENTES SINO FUNCIONAL O ALGO ASI // SINO SE PONE URL NO VARIA AUNQUE CLIQUES EN PAGINADOR
   };
 
-  
-  
   return (
-    <div>
+    <div className="paginador">
       <ReactPaginate
-        previousLabel={"previous"}
-        nextLabel={"next"}
+        previousLabel={"<"}
+        nextLabel={">"}
         breakLabel={"..."}
         pageCount={Math.ceil(TotalNumberItemsPages/10)}     // OBTENEMOS VALOR NUMERO MAX ITEMS Y LO / NUMERO ITEMS POR PAGINA (10)     //función Math.ceil() devuelve el entero mayor o igual más próximo a un número dado.   
-        marginPagesDisplayed={4} //numero pg mostradas en numeros
+        marginPagesDisplayed={2} //numero pg mostradas en numeros
         onPageChange={handlePageClick}
-        containerClassName={"pagination justify-content-center"} // ul class bootstrap component pagination
+        /* containerClassName={"pagination pagination-sm justify-content-end"}  */// ul class bootstrap component pagination
+        /* $pagination-bg:$yellow */
+        containerClassName={"paginationBttns paginationBttns-sm justify-content-end"} // ul class bootstrap component pagination
+        activeClassName={"paginationActive"}
         pageClassName={"page-item"} //li class bootstrap
         pageLinkClassName={"page-link"} // a class bootstrap
         previousClassName={"page-item"} //previous boton
@@ -49,7 +50,8 @@ const Pagination = () => {
         nextLinkClassName={"page-link"}
         breakClassName={"page-item"} //styling boton ...
         breakLinkClassName={"page-link"}
-        activeClassName={"active"}
+        /* activeClassName={"active"} */
+        
       />
     </div>
   );

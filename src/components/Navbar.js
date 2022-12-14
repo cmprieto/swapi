@@ -8,15 +8,10 @@ const Menu = () => {
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
+        <li>/</li>
         <li>
-          <NavLink to="/page2">Page2</NavLink>
+          <NavLink to="/characters/">Characters</NavLink>
         </li>
-        {/* <li>
-          <Link to="/:id">Id</Link>
-        </li> */}
-       <li>
-          <NavLink to="/ajksdfkjhasdk">Error en la url</NavLink>
-        </li> 
       </ul>
     </Nav>
   );
