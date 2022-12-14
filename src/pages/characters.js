@@ -1,9 +1,7 @@
 import React from "react";
 import { Swapi } from "../services/swapi";
-
 import { Fragment } from "react";
 import Provider from "../application/provider";
-import { Title } from "../styled";
 import { Characters } from "../components/characters";
 import { Header } from "../components/header";
 const People=()=> {
@@ -12,7 +10,6 @@ const People=()=> {
       <Provider>
         <Header />
         <Swapi />
-        
         <Characters />
       </Provider>
     </Fragment>

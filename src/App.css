@@ -89,13 +89,14 @@
   max-width: 2rem;
   max-height: 2rem;
 }
-.paginationActive a:hover {
-  /* NO FUNCIONA CORRECTAMENTE */
+
+
+.paginationActive a {   /* DA ESTILO CUANDO BOTON(Nº) ESTÁ ACTIVO CON < ó >   */
   color: black;
-  /* background-color: yellow; */
+  background-color: #81d4fa;
 }
 
-.paginationActive a:focus {
+ .paginationActive a:focus {  /* DA ESTILO CUANDO BOTON(Nº) ESTÁ ACTIVO CON CLICK DE MOUSE   */
   background-color: #81d4fa;
   color: black;
 }

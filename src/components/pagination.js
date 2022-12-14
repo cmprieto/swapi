@@ -39,9 +39,9 @@ const Pagination = () => {
         marginPagesDisplayed={2} //numero pg mostradas en numeros
         onPageChange={handlePageClick}
         /* containerClassName={"pagination pagination-sm justify-content-end"}  */// ul class bootstrap component pagination
-        /* $pagination-bg:$yellow */
         containerClassName={"paginationBttns paginationBttns-sm justify-content-end"} // ul class bootstrap component pagination
-        activeClassName={"paginationActive"}
+                                              //DEFINIMOS UNA CLASE EN APP.CSS
+        activeClassName={"paginationActive"}  //DEFINIMOS UNA CLASE EN APP.CSS
         pageClassName={"page-item"} //li class bootstrap
         pageLinkClassName={"page-link"} // a class bootstrap
         previousClassName={"page-item"} //previous boton

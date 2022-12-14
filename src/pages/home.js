@@ -1,21 +1,13 @@
 import React from "react";
-import { Swapi } from "../services/swapi";
-import { Menu } from "../components/Navbar";
 import { Fragment } from "react";
-import Provider from "../application/provider";
-import { Title } from "../styled";
-import { Characters } from "../components/characters";
 import { Header } from "../components/header";
+import { Presentation } from "../components/presentation";
 
 const Home=()=> {
   return (
     <Fragment>
-      <Provider>
         <Header />
-        <Swapi />
-        
-        <Characters />
-      </Provider>
+        <Presentation/>
     </Fragment>
   );
 }

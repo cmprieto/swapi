@@ -19,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
   /* src: `$logoSW` 
 `; */
 
-export const Ul = styled.ul`
+export const Ul = styled.ul`    //FICHAS DE PERSONAJES 
   display: flex;
   flex-direction: row;
   /* justify-content: center; */
@@ -53,10 +53,11 @@ export const Title = styled.h1`
   font-size: 4em;
   text-align: center;
   color: yellow;
+  position: absolute;
   /* text-decoration: uppercase; */
 `;
 
-export const Ul2 = styled.ul`
+export const Ul2 = styled.ul`   //FICHA CHARACTERS CARD
   list-style: none;
 
   li {
@@ -64,7 +65,6 @@ export const Ul2 = styled.ul`
     text-align: left;
     color: grey;
     text-decoration: uppercase;
-    
   }
   li:first-child {
     font-size: 1.5em;
@@ -89,7 +89,7 @@ export const Card = styled.div`
   background-color: transparent;
   flex-direction: row;
   justify-content: flex-start;
-  padding:1rem;
+  padding: 1rem;
 
   /* On mouse-over, add a deeper shadow */
   &:hover {
@@ -104,11 +104,10 @@ export const Card = styled.div`
   }
 `;
 
-export const Nav = styled.nav`
-/*   padding-bottom: 10px;
- */  font-size: 0.9rem;
-  letter-spacing: 1.05rem;
+export const Nav = styled.li`
   ul {
+    font-size: 0.9rem;
+    letter-spacing: 1.05rem;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -120,20 +119,19 @@ export const Nav = styled.nav`
     color: white;
     /* border-right: 1px solid #bbb; */
   }
-  li:last-child {
-    border-right: none;
-  }
+  /*  */
   li a {
     display: block;
     color: white;
     text-align: center;
     /*     padding: 14px 16px;*/
-    text-decoration: none;    
+    text-decoration: none;
   }
   li a:hover:not(.active) {
     background-color: #111;
   }
-  .active {
+  li .active {
+    /* border-bottom: 2px solid yellow; */
     color: #81d4fa;
   }
 `;
@@ -150,5 +148,48 @@ export const Cabecera = styled.div`
   justify-content: space-around;
   align-items: center;
   font-size: 0.8rem;
-  
+`;
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+export const Img = styled.img`
+  width: 75vw;
+  margin: 15px;
+  transition: width 6s;
+  opacity: 0.8;
+`;
+
+export const Button = styled.button`
+  position: relative;
+  color: white;
+  font-size: 1em;
+  /* margin: 1em; */
+  padding: 0.25em 1em;
+  border: 2px solid transparent;
+  border-top: 2px solid #ffffe0;
+  border-radius: 3px;
+  display: block;
+  opacity: 0.6;
+  background-color: black;
+  bottom: 50px;
+  // PARA ELIMINAR EL UNDERLINE DE BOTON CON LINK
+  &:link {
+    text-decoration: none;
+  }
+
+  &:visited {
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active {
+    text-decoration: none;
+  }
 `;
