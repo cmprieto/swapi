@@ -1,13 +1,10 @@
 import React from "react";
-import Provider from "./application/provider";
-import { GlobalStyle, Title } from "./styled";
+import Provider from "./application/Provider";
+import { GlobalStyle } from "./styled";
+import Router from "./application/Router";
 import "./App.css";
-import { Swapi } from "./services/swapi";
-import { StarShips } from "./components/starships";
-import Router from "./application/routes";
-import NavBar from "./components/Navbar";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <GlobalStyle />

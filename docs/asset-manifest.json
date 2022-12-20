@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/swapi/static/css/main.2fd7ee1c.css",
+    "main.js": "/swapi/static/js/main.77da9504.js",
+    "static/media/starWars.jpg": "/swapi/static/media/starWars.5b50e569d05046315c93.jpg",
+    "static/media/Luz.gif": "/swapi/static/media/Luz.b4292bbfa58ff2f61669.gif",
+    "static/media/Anton.ttf": "/swapi/static/media/Anton.170b842f9a8cd6150a0d.ttf",
+    "static/media/Starjedi.ttf": "/swapi/static/media/Starjedi.8d577dc1e1755c4860f3.ttf",
+    "static/media/logoSW.jpg": "/swapi/static/media/logoSW.2b5a7673250e185ab7e9.jpg",
+    "static/media/Starjhol.ttf": "/swapi/static/media/Starjhol.bae45e29a2672f673cc9.ttf",
+    "static/media/roboto-condensed-v25-latin-regular.woff": "/swapi/static/media/roboto-condensed-v25-latin-regular.6edcf4aeb769818e21aa.woff",
+    "static/media/roboto-condensed-v25-latin-regular.woff2": "/swapi/static/media/roboto-condensed-v25-latin-regular.bb7a4e73944870e385e1.woff2",
+    "index.html": "/swapi/index.html",
+    "main.2fd7ee1c.css.map": "/swapi/static/css/main.2fd7ee1c.css.map",
+    "main.77da9504.js.map": "/swapi/static/js/main.77da9504.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2fd7ee1c.css",
+    "static/js/main.77da9504.js"
+  ]
+}

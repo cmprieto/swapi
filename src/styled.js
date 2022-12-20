@@ -1,4 +1,3 @@
-import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`   
@@ -122,17 +121,22 @@ export const Nav = styled.li`
   /*  */
   li a {
     display: block;
-    color: white;
-    text-align: center;
+    color: #81d4fa;
+  /*   text-align: center; */
     /*     padding: 14px 16px;*/
     text-decoration: none;
+    border-radius:2px;
+    padding: 2px;
   }
   li a:hover:not(.active) {
-    background-color: #111;
-  }
+    background-color: #ffffe0;
+    color: black;
+    opacity:0.5;
+    }
   li .active {
     /* border-bottom: 2px solid yellow; */
-    color: #81d4fa;
+    color: white;
+ 
   }
 `;
 
@@ -140,6 +144,9 @@ export const linkStyle = {
   margin: "1rem",
   textDecoration: "none",
 };
+
+
+
 
 export const Cabecera = styled.div`
   display: flex;
@@ -193,3 +200,109 @@ export const Button = styled.button`
     text-decoration: none;
   }
 `;
+
+export const HeaderLogo = styled.div`
+display:flex;
+/* outline: 1px solid red;
+ */
+border:0px;
+margin:0px;
+padding:0px;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+`;
+
+export const ButtonLog = styled.button`
+  position:relative;
+  color: white;
+  font-size: 0.8rem;
+  /* margin: 1em; */
+  /* padding: 0.25em 1em; */
+  border: 1px solid transparent;
+  /* border-top: 2px solid #ffffe0; */
+  border-radius: 3px;
+  display: inline;
+  opacity: 0.6;
+  background-color: black;
+  
+  
+  // PARA ELIMINAR EL UNDERLINE DE BOTON CON LINK
+  &:link {
+    text-decoration: none;
+  }
+
+  &:visited {
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color:yellow;
+    border-top: 2px solid #ffffe0;
+  }
+
+  &:active {
+    text-decoration: none;
+    color:red;
+  }
+`;
+
+export const ContainerLogin = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items:center;
+  input{
+    min-width:90%;
+  }
+  Button{
+    min-width:90%;
+  }
+`;
+export const InputText = styled.input`
+  font-size: 1em;
+  padding: 5px;
+  margin: 10px; 
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 3px;
+  width: 90%;
+  &:hover {
+    border: 1px solid grey;
+    
+  }
+`;
+/* The Modal (background) */
+/* 
+export const Modal = styled.div`
+  display: none; /* Hidden by default */
+/*   position: fixed; /* Stay in place 
+  z-index: 1; /* Sit on top 
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width 
+  height: 100%; /* Full height 
+  overflow: auto; /* Enable scroll if needed 
+  background-color: rgb(0,0,0); /* Fallback color 
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity 
+`;
+ */
+/* Modal Content/Box */
+
+/* The Close Button */
+/* .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+} */
+/* 
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+} 
+`;*/

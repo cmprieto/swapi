@@ -1,32 +1,46 @@
-import React, { Fragment } from "react";
-import { Menu } from "../components/Navbar";
-import { Cabecera } from "../styled.js";
+import { Fragment, useEffect, useState } from 'react';
+import { useCartContext } from '../application/Provider.js';
+import Menu from "./Menu";
+import { Cabecera, ButtonLog, HeaderLogo } from "../styled.js";
 import logoSW from "../img/logoSW.jpg";
 import "../App.css";
-import { Pagination } from "./pagination.js";
+import Pagination from "./Pagination.js";
 import { useLocation } from "react-router-dom";
+import Login from "./Login";
+import Signup from "./Signup.js";
+import { Link } from "react-router-dom";
+
 
 const Header = () => {
   const location = useLocation();
-  console.log(location.pathname);
+  const [isVisible, setIsVisible] = useState(true);
+  const { shows, setShows, showUp, setShowUp } = useCartContext();
 
-  let isVisible=(location.pathname).includes("/character");
+  useEffect(() => {
+    setIsVisible(location.pathname.includes('Character'));
+  }, []);
 
-/*   if ((location.pathname).includes("/characters/")) {
-    isVisible = true;
-  } else {
-    isVisible = false;
-  }
- */
+  console.log('location.pathname', location.pathname);
+  console.log('isVisible', isVisible);
+  const handleShow = () => setShows(true);
+  const handleShowUp = () => setShowUp(true);
 
   return (
     <Fragment>
-      <img src={logoSW} width="15%" alt="StarWars" />
+      <HeaderLogo>
+        <Link to={process.env.PUBLIC_URL + '/'}><img src={logoSW} width="25%" alt="StarWars" /></Link>
+        <div>
+          <ButtonLog onClick={handleShow}>LOGIN</ButtonLog>
+          {shows && <Login />}
+          <ButtonLog onClick={handleShowUp}>SIGN UP</ButtonLog>
+          {showUp && <Signup />}
+        </div>
+      </HeaderLogo>
       <Cabecera>
-        <Menu />
+        <Menu visible={isVisible} />
         {isVisible && <Pagination />}
       </Cabecera>
     </Fragment>
   );
 };
-export { Header };
+export default Header;

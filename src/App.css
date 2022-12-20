@@ -4,10 +4,6 @@
   margin: auto;
 }
 
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-} */
 
 .card {
   /* Add shadows to create the "card" effect */
@@ -99,4 +95,12 @@
  .paginationActive a:focus {  /* DA ESTILO CUANDO BOTON(Nº) ESTÁ ACTIVO CON CLICK DE MOUSE   */
   background-color: #81d4fa;
   color: black;
+}
+
+.modal-body, .modal-header, .modal-footer{
+  background-color: #ffffe0;
+}
+
+.active{      /* CSS CUANDO NAVLINK ESTA ACTIVE */
+  border-radius:2px;
 }

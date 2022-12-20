@@ -1,13 +1,12 @@
 import ReactPaginate from "react-paginate";
-import React, { useEffect, useState } from "react";
-import { useContext } from "react";
-import { AppContext } from "../application/provider.js";
+import React from "react";
+import { useCartContext } from '../application/Provider.js';
 import "../App.css";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Pagination = () => {
-  const [Characters, setCharacters,TotalNumberItemsPages] = useContext(AppContext);
+  const { setCharacters, TotalNumberItemsPages } =
+    useCartContext();
 
   let navigate = useNavigate();
 
@@ -22,12 +21,14 @@ const Pagination = () => {
 
   const handlePageClick = async (data) => {
     console.log(data.selected); //nos da el valor integer del page number
-    let currentPage = parseInt(data.selected + 1); // corrrige el desfase de valor 0 a pág 1 
+    let currentPage = parseInt(data.selected + 1); // corrrige el desfase de valor 0 a pág 1
     console.log(currentPage);
     const characterFormServer = await fetchCharacters(currentPage);
     setCharacters(characterFormServer);
-    navigate(`../characters/${currentPage}`, { replace: true });    //SE DEFINE LA PAGINA DESTINO COMO SI FUERA UN LINK PERO SIN COMPONENTES SINO FUNCIONAL O ALGO ASI // SINO SE PONE URL NO VARIA AUNQUE CLIQUES EN PAGINADOR
+    navigate(`${process.env.PUBLIC_URL}/Characters/${currentPage}`, { replace: true }); //SE DEFINE LA PAGINA DESTINO COMO SI FUERA UN LINK PERO SIN COMPONENTES SINO FUNCIONAL O ALGO ASI // SINO SE PONE URL NO VARIA AUNQUE CLIQUES EN PAGINADOR
   };
+
+
 
   return (
     <div className="paginador">
@@ -35,13 +36,15 @@ const Pagination = () => {
         previousLabel={"<"}
         nextLabel={">"}
         breakLabel={"..."}
-        pageCount={Math.ceil(TotalNumberItemsPages/10)}     // OBTENEMOS VALOR NUMERO MAX ITEMS Y LO / NUMERO ITEMS POR PAGINA (10)     //función Math.ceil() devuelve el entero mayor o igual más próximo a un número dado.   
+        pageCount={Math.ceil(TotalNumberItemsPages / 10)} // OBTENEMOS VALOR NUMERO MAX ITEMS Y LO / NUMERO ITEMS POR PAGINA (10)     //función Math.ceil() devuelve el entero mayor o igual más próximo a un número dado.
         marginPagesDisplayed={2} //numero pg mostradas en numeros
         onPageChange={handlePageClick}
-        /* containerClassName={"pagination pagination-sm justify-content-end"}  */// ul class bootstrap component pagination
-        containerClassName={"paginationBttns paginationBttns-sm justify-content-end"} // ul class bootstrap component pagination
-                                              //DEFINIMOS UNA CLASE EN APP.CSS
-        activeClassName={"paginationActive"}  //DEFINIMOS UNA CLASE EN APP.CSS
+        /* containerClassName={"pagination pagination-sm justify-content-end"}  */ // ul class bootstrap component pagination
+        containerClassName={
+          "paginationBttns paginationBttns-sm justify-content-end"
+        } // ul class bootstrap component pagination
+        //DEFINIMOS UNA CLASE EN APP.CSS
+        activeClassName={"paginationActive"} //DEFINIMOS UNA CLASE EN APP.CSS
         pageClassName={"page-item"} //li class bootstrap
         pageLinkClassName={"page-link"} // a class bootstrap
         previousClassName={"page-item"} //previous boton
@@ -50,11 +53,10 @@ const Pagination = () => {
         nextLinkClassName={"page-link"}
         breakClassName={"page-item"} //styling boton ...
         breakLinkClassName={"page-link"}
-        /* activeClassName={"active"} */
-        
+      /* activeClassName={"active"} */
       />
     </div>
   );
 };
 
-export { Pagination };
+export default Pagination;

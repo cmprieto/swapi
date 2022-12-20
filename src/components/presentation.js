@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import { Container, Img, Button } from "../styled.js";
 import "../App.css";
 import luz from "../img/starWars.jpg";
@@ -11,7 +11,7 @@ const Presentation = () => {
         {/*       <Img src={Light} alt="StarWarsP" /> */}
         <br />
         <Img src={luz} alt="StarWarsPoster" />
-        <Button as="a" href="/characters/">
+        <Button as="a" href={process.env.PUBLIC_URL + "/Characters/"}>
           MEET THE CHARACTERS
         </Button>
       </Container>
@@ -19,4 +19,4 @@ const Presentation = () => {
   );
 };
 
-export { Presentation };
+export default Presentation;

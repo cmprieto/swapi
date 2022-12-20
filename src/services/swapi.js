@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react";
-import { useContext } from "react";
-import { AppContext } from "../application/provider.js";
+import { useEffect } from "react";
+import { useCartContext } from '../application/Provider.js';
 import axios from "axios";
-import ReactPaginate from "react-paginate";
 
 const Swapi = () => {
-  /*     const [Starshisps, setStarshisps] = useContext(AppContext); */
-  const [Characters, setCharacters,TotalNumberItemsPages,setTotalNumberItemsPages] = useContext(AppContext);
+
+  const { Characters, setCharacters, TotalNumberItemsPages, setTotalNumberItemsPages } = useCartContext();
 
   /* useEffect(() => {
     axios.get(`https://swapi.dev/api/people/?page=${currPage}`).then((res) => {
@@ -23,8 +21,10 @@ const Swapi = () => {
     };
     getComments();
   }, []);
-  
-  console.log(Characters);
+
+  console.log('PersonajesAxios', Characters);
+  console.log('TotalNumberItemsPages', TotalNumberItemsPages);
+
 
   /* const fetchComments = async (currentPage) => {
     const res = await fetch(
@@ -35,4 +35,4 @@ const Swapi = () => {
   }; */
 };
 
-export { Swapi };
+export default Swapi;

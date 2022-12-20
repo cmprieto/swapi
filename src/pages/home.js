@@ -1,13 +1,12 @@
 import React from "react";
 import { Fragment } from "react";
-import { Header } from "../components/header";
-import { Presentation } from "../components/presentation";
+import Presentation from "../components/Presentation";
 
-const Home=()=> {
+
+const Home = () => {
   return (
     <Fragment>
-        <Header />
-        <Presentation/>
+      <Presentation />
     </Fragment>
   );
 }

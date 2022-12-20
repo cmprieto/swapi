@@ -1,13 +1,11 @@
-import React, { Fragment, useState } from "react";
-import { useContext, useEffect } from "react";
-import { AppContext } from "../application/provider.js";
-import { Title, Ul, linkStyle } from "../styled.js";
+import React, { Fragment } from "react";
+import { Ul, linkStyle } from "../styled.js";
 import { Link } from "react-router-dom";
 import "../App.css";
+import { useCartContext } from '../application/Provider.js';
 
-
-const Characters = () => {
-  const [Characters] = useContext(AppContext);
+const CharactersComponent = () => {
+  const { Characters } = useCartContext();
   let direccion, ids, control;
 
   /*   if(loading){
@@ -17,7 +15,7 @@ const Characters = () => {
   return (
     <Fragment>
       <Ul>
-        {Characters && 
+        {Characters &&
           Characters.map((e) => {
             /*EXTRAER ID DE URL DE api*/
             direccion = e.url;
@@ -31,7 +29,7 @@ const Characters = () => {
 
             return (
               <li key={e.url}>
-                <Link to={`/character/${ids}`} state={e} style={linkStyle}>
+                <Link to={process.env.PUBLIC_URL + `/Character/${ids}`} state={e} style={linkStyle}>
                   {console.log(e)}
                   <div className="card">
                     {/*ESTILOS EN app.css -> pasarlos a styledcomp*/}
@@ -53,7 +51,7 @@ const Characters = () => {
           })}
       </Ul>
 
-    </Fragment>
+    </Fragment >
   );
 };
-export { Characters };
+export default CharactersComponent;

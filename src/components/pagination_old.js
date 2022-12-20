@@ -1,5 +1,5 @@
-import React, { Fragment, useState } from "react";
-import { useContext, useEffect } from "react";
+import React from "react";
+
 
 const Pagination = (postsPerPage, totalPosts) => {
   const pageNumbers = [];
