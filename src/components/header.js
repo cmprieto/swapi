@@ -1,3 +1,4 @@
+import React from 'react';
 import { Fragment, useEffect, useState } from 'react';
 import { useCartContext } from '../application/Provider.js';
 import Menu from "./Menu";
@@ -22,19 +23,19 @@ const Header = () => {
 
   console.log('location.pathname', location.pathname);
   console.log('isVisible', isVisible);
-  const handleShow = () => setShows(true);
-  const handleShowUp = () => setShowUp(true);
-
+  /*   const handleShow = () => setShows(true);
+    const handleShowUp = () => setShowUp(true);
+   */
   return (
     <Fragment>
       <HeaderLogo>
         <Link to={process.env.PUBLIC_URL + '/'}><img src={logoSW} width="25%" alt="StarWars" /></Link>
-        <div>
+        {/* <div>
           <ButtonLog onClick={handleShow}>LOGIN</ButtonLog>
           {shows && <Login />}
           <ButtonLog onClick={handleShowUp}>SIGN UP</ButtonLog>
           {showUp && <Signup />}
-        </div>
+        </div> */}
       </HeaderLogo>
       <Cabecera>
         <Menu visible={isVisible} />

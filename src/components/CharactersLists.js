@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 import { useCartContext } from "../application/Provider.js";
 import { Ul, linkStyle } from "../styled.js";
 import { Link } from "react-router-dom";

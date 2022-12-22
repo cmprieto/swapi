@@ -1,10 +1,11 @@
 import styled, { createGlobalStyle } from "styled-components";
+import fondoStars from './img/stars.png';
 
 export const GlobalStyle = createGlobalStyle`   
 	body {
     /* box-sizing: content-box; */
     background-color: black;
-    background-image: url("http://www.script-tutorials.com/demos/360/images/stars.png");
+    background-image: url(${fondoStars});  
     margin:2rem auto;
     text-align: center;
     max-width:80vw;

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Fragment } from "react";
 import { Container, Img, Button } from "../styled.js";
 import "../App.css";

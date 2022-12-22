@@ -6,12 +6,6 @@ const Swapi = () => {
 
   const { Characters, setCharacters, TotalNumberItemsPages, setTotalNumberItemsPages } = useCartContext();
 
-  /* useEffect(() => {
-    axios.get(`https://swapi.dev/api/people/?page=${currPage}`).then((res) => {
-      setCharacters(res.data.results);
-      console.log(res.data.results);
-    });
-  }, []); */
 
   useEffect(() => {
     const getComments = async () => {
@@ -26,13 +20,6 @@ const Swapi = () => {
   console.log('TotalNumberItemsPages', TotalNumberItemsPages);
 
 
-  /* const fetchComments = async (currentPage) => {
-    const res = await fetch(
-      `https://swapi.dev/api/people/?page=${currentPage}`
-    );
-    const data = await res.json();
-    return data;
-  }; */
 };
 
 export default Swapi;
