@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/swapi/static/css/main.2fd7ee1c.css",
-    "main.js": "/swapi/static/js/main.310aecb0.js",
+    "main.css": "/swapi/static/css/main.7662b1e4.css",
+    "main.js": "/swapi/static/js/main.1dd6a32f.js",
     "static/media/starWars.jpg": "/swapi/static/media/starWars.5b50e569d05046315c93.jpg",
     "static/media/Luz.gif": "/swapi/static/media/Luz.b4292bbfa58ff2f61669.gif",
     "static/media/stars.png": "/swapi/static/media/stars.90c266f7d69f1ffb6137.png",
@@ -12,11 +12,11 @@
     "static/media/roboto-condensed-v25-latin-regular.woff": "/swapi/static/media/roboto-condensed-v25-latin-regular.6edcf4aeb769818e21aa.woff",
     "static/media/roboto-condensed-v25-latin-regular.woff2": "/swapi/static/media/roboto-condensed-v25-latin-regular.bb7a4e73944870e385e1.woff2",
     "index.html": "/swapi/index.html",
-    "main.2fd7ee1c.css.map": "/swapi/static/css/main.2fd7ee1c.css.map",
-    "main.310aecb0.js.map": "/swapi/static/js/main.310aecb0.js.map"
+    "main.7662b1e4.css.map": "/swapi/static/css/main.7662b1e4.css.map",
+    "main.1dd6a32f.js.map": "/swapi/static/js/main.1dd6a32f.js.map"
   },
   "entrypoints": [
-    "static/css/main.2fd7ee1c.css",
-    "static/js/main.310aecb0.js"
+    "static/css/main.7662b1e4.css",
+    "static/js/main.1dd6a32f.js"
   ]
 }

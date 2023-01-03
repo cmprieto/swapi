@@ -1,6 +1,5 @@
-import React, { Fragment, useState } from "react";
+import { Fragment, useState } from "react";
 import { useCartContext } from '../application/Provider.js';
-import "../App.css";
 import { Modal, Button } from "react-bootstrap";
 import { ContainerLogin, InputText } from "../styled.js";
 import { useLocalStorage } from "../hooks/useLocalStorage";
@@ -15,25 +14,39 @@ const Signup = () => {
   const [mail, setMail] = useState("");
   const [psw, setPsw] = useState("");
   const [username, setUsername] = useState("");
-  const [control, setControl] = useState(false);
+  const [addNewUser, setAddNewUser] = useState(false);
 
   const handleClose = () => {
     setShowUp(false);
-    setControl(false);
+    setAddNewUser(false);
   }
 
-  const handleUsers = () => {
-    //INTERESANTE AÑADIR UN STOPPER NO SE PUDIERA AÑADIR MAIL NI USERNAME REPETIDO. MAP NECESARIO
 
-    users.map((e) => {    // REALMENT LO QUE NECESITO ES BUSCAR EN EL MAP HASTA Q SE CUMPLA UNA CONDICION Y Q SALGA DEL BUCLE
+  const handleUsers = () => {
+    console.log('users', users)
+    console.log('users.lenght', users.lenght);
+    alert('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+    setUsers([...users, { mail, psw, username }]);
+    setAddNewUser(true);
+
+  }
+
+  const handleBlur = () => {
+    alert('blurrrrrrrrrrrrrrrrr');
+    console.log('users', users);
+
+    users.map((e) => {    // RECORRE USUARIOS PARA VER SI EXISTE USUARIO
+      console.log(e);
       if (e.mail === mail || e.username === username) {
         alert("mail o usuario ya existe");
-        setControl(true);
+        console.log(e.username + 'iguales ' + username);
+        setAddNewUser(false);
       }
-    });
-    !control && setUsers([...users, { mail, psw, username }]);  // no va del todo bien el control, 
+      else (setAddNewUser(true))
+    })
+    return (alert('addNewUser ' + addNewUser))
+  }
 
-  };
 
   return (
     <Fragment>
@@ -43,13 +56,15 @@ const Signup = () => {
         </Modal.Header>
         <ContainerLogin>
           <Modal.Body bsPrefix="modal-body">
-            <form /* action="/action_page.php" */>
+
+            <form onSubmit={handleUsers}>
               <InputText
                 type="text"
                 placeholder="username"
                 name="name"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
+                onBlur={handleBlur}
               ></InputText>
 
               <InputText
@@ -58,6 +73,7 @@ const Signup = () => {
                 name="mail1"
                 value={mail}
                 onChange={(e) => setMail(e.target.value)}
+              /*  onBlur={handleBlurMail} */
               ></InputText>
               <InputText
                 type="password"
@@ -66,21 +82,19 @@ const Signup = () => {
                 value={psw}
                 onChange={(e) => setPsw(e.target.value)}
               ></InputText>
+
               <Button
                 variant="secondary"
-                type="button"
-                onClick={handleUsers} //AL ENVIAR LA INFOR, AÑADIMOS UNA POSICION AL ARRAY DE OBJETOS
+                type="submit"
+              /* onClick={handleUsers} */
               >
                 Sign up
               </Button>
             </form>
+
           </Modal.Body>
         </ContainerLogin>
         <Modal.Footer bsPrefix="modal-footer">
-          {/* <Button variant="primary" type="submit" /* onClick={handleClose} */
-          /*> 
-            Sign in
-          </Button> */}
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
@@ -89,4 +103,5 @@ const Signup = () => {
     </Fragment>
   );
 };
+
 export default Signup;

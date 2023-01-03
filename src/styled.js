@@ -1,6 +1,9 @@
 import styled, { createGlobalStyle } from "styled-components";
 import fondoStars from './img/stars.png';
 
+const desktopStartWidth = 1000;
+const mobile = `@media (max-width: ${desktopStartWidth}px)`;
+
 export const GlobalStyle = createGlobalStyle`   
 	body {
     /* box-sizing: content-box; */
@@ -19,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
   /* src: `$logoSW` 
 `; */
 
-export const Ul = styled.ul`    //FICHAS DE PERSONAJES 
+export const CharactersListsContainer = styled.ul`    //FICHAS DE PERSONAJES 
   display: flex;
   flex-direction: row;
   /* justify-content: center; */
@@ -46,6 +49,34 @@ export const Ul = styled.ul`    //FICHAS DE PERSONAJES
     /* margin: 0.5rem; */
     /* box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.16); */
   }
+   ${mobile} {
+    li{
+      max-width: 50%;
+    }
+  }
+`;
+
+export const CardContainer = styled.div`
+  margin: 1rem;
+  background-color: transparent;
+  transition: 0.3s;
+   color: #282c34;  
+   img{
+    border-radius: 5px 5px 0 0; 
+
+    width: 100%;
+  } 
+  div{
+    font-size:1.5vw; 
+    background-color: whitesmoke;
+ 
+  
+  }
+  &:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transform: translateY(5%);
+  opacity:0.8;
+}
 `;
 
 export const Title = styled.h1`
@@ -88,12 +119,17 @@ export const Card = styled.div`
   display: flex;
   background-color: transparent;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 1rem;
 
   /* On mouse-over, add a deeper shadow */
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  img{
+    width:25%;
+    height:25%;
   }
 
   /* Add some padding inside the card container */
@@ -102,6 +138,17 @@ export const Card = styled.div`
     padding: 2px 16px;
     width: 50%;
   }
+  ${mobile} {
+    flex-direction: column;
+    align-items: center;
+    div{
+      width: 90%;
+    }
+    img{
+      width:90%;
+    }
+  }
+
 `;
 
 export const Nav = styled.li`
@@ -124,7 +171,7 @@ export const Nav = styled.li`
     display: block;
     color: #81d4fa;
   /*   text-align: center; */
-    /*     padding: 14px 16px;*/
+    /* padding: 14px 16px;*/
     text-decoration: none;
     border-radius:2px;
     padding: 2px;
@@ -204,13 +251,11 @@ export const Button = styled.button`
 
 export const HeaderLogo = styled.div`
 display:flex;
-/* outline: 1px solid red;
- */
-border:0px;
+/* outline: 1px solid red; */
 margin:0px;
 padding:0px;
 align-items: center;
-justify-content: space-between;
+justify-content: center;
 flex-wrap: wrap;
 `;
 
@@ -274,6 +319,19 @@ export const InputText = styled.input`
     border: 1px solid grey;
     
   }
+`;
+export const ModalFoot = styled.div`
+    margin:0;
+    padding:0;
+    border-radius:3px;
+`;
+export const Pgreen = styled.p`
+  font-size: 0.9em;
+  color: green;
+`;
+export const Pred = styled.p`
+  font-size: 0.9em;
+  color: red;
 `;
 /* The Modal (background) */
 /* 

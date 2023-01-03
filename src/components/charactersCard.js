@@ -23,8 +23,7 @@ const CharactersCard = () => {
             ".jpg"
           }
           alt="characters"
-          width="25%"
-          height="25%"
+
         ></img>
 
         <div>

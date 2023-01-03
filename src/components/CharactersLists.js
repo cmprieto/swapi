@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { useCartContext } from "../application/Provider.js";
-import { Ul, linkStyle } from "../styled.js";
+import { CharactersListsContainer, linkStyle, CardContainer } from "../styled.js";
 import { Link } from "react-router-dom";
 import "../App.css";
 
@@ -14,7 +14,7 @@ const CharactersLists = () => {
 
   return (
     <Fragment>
-      <Ul>
+      <CharactersListsContainer>
         {Characters &&
           Characters.map((e) => {
             /*EXTRAER ID DE URL DE api*/
@@ -31,9 +31,9 @@ const CharactersLists = () => {
               <li key={e.url}>
                 <Link to={process.env.PUBLIC_URL + `/Character/${ids}`} state={e} style={linkStyle}>
                   {console.log('Personaje', e)}
-                  <div className="card">
+                  <CardContainer>
                     {/*ESTILOS EN app.css -> pasarlos a styledcomp*/}
-                    <img id="foto"
+                    <img
                       src={
                         "https://starwars-visualguide.com/assets/img/characters/" +
                         ids +
@@ -43,13 +43,13 @@ const CharactersLists = () => {
                       width="75%"
                       height="75%"
                     ></img>
-                    <div className="container">{e.name}</div>
-                  </div>
+                    <div>{e.name}</div>
+                  </CardContainer>
                 </Link>
               </li>
             );
           })}
-      </Ul>
+      </CharactersListsContainer>
     </Fragment>
   );
 };

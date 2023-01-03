@@ -3,6 +3,7 @@ import { Ul, linkStyle } from "../styled.js";
 import { Link } from "react-router-dom";
 import "../App.css";
 import { useCartContext } from '../application/Provider.js';
+import { CharactersListsContainer } from '../styled';
 
 const CharactersComponent = () => {
   const { Characters } = useCartContext();
@@ -31,6 +32,7 @@ const CharactersComponent = () => {
               <li key={e.url}>
                 <Link to={process.env.PUBLIC_URL + `/Character/${ids}`} state={e} style={linkStyle}>
                   {console.log(e)}
+
                   <div className="card">
                     {/*ESTILOS EN app.css -> pasarlos a styledcomp*/}
                     <img id="foto"

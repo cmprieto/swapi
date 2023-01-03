@@ -2,8 +2,8 @@ import React from "react";
 import { Fragment } from "react";
 import Presentation from "../components/Presentation";
 
-
 const Home = () => {
+
   return (
     <Fragment>
       <Presentation />
