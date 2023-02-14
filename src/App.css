@@ -4,8 +4,6 @@
   margin: auto;
 }
 
-
-
 .paginationBttns {
   width: 100%;
   display: flex;
@@ -27,25 +25,38 @@
   max-height: 2rem;
 }
 
-
-.paginationActive a {   /* DA ESTILO CUANDO BOTON(Nº) ESTÁ ACTIVO CON < ó >   */
+.paginationActive a {
+  /* DA ESTILO CUANDO BOTON(Nº) ESTÁ ACTIVO CON < ó >   */
   color: black;
   background-color: #81d4fa;
 }
 
- .paginationActive a:focus {  /* DA ESTILO CUANDO BOTON(Nº) ESTÁ ACTIVO CON CLICK DE MOUSE   */
+.paginationActive a:focus {
+  /* DA ESTILO CUANDO BOTON(Nº) ESTÁ ACTIVO CON CLICK DE MOUSE   */
   background-color: #81d4fa;
   color: black;
 }
 
-.modal-body, .modal-header, .modal-footer{
-  background-color: #ffffe0;
+.modal-body,
+.modal-header,
+.modal-footer {
+  background-color: #181818;
+  color: yellow;
 }
 
-.active{      /* CSS CUANDO NAVLINK ESTA ACTIVE */
-  border-radius:2px;
+button.btn-close {
+  background-color: grey;
 }
 
-.modal-footer{
+button.btn-close:hover {
+  background-color: whitesmoke;
+  opacity: 0.4;
+}
+.active {
+  /* CSS CUANDO NAVLINK ESTA ACTIVE */
+  border-radius: 2px;
+}
+
+.modal-footer {
   justify-content: space-around;
 }

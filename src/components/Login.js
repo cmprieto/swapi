@@ -1,15 +1,14 @@
 import React, { Fragment, useState } from "react";
 import { useCartContext } from '../application/Provider.js';
 import "../App.css";
-import { Modal, Button, ModalDialog, ModalFooter } from "react-bootstrap";
+import { Modal, Button } from "react-bootstrap";
 import { ContainerLogin, InputText, Pgreen, Pred, ModalFoot } from "../styled.js";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const Login = () => {
-  /* const users = useContext(AppContext); */
   const {
     shows,
-    setShows,
+    setShows, user, setUser,
   } = useCartContext();
 
   const [mailLogin, seteMailLogin] = useState('');
@@ -27,8 +26,9 @@ const Login = () => {
     console.log('mailLogin', mailLogin);
     console.log('passLogin', passLogin);
 
-    users.map((e) => {
+    users.map((e, i) => {
       console.log('e', e);
+      /*  alert('i es ' + i); */
       if (mailLogin === e.mail) {
         console.log('E.MAIL', e.mail)
         //verifica mail
@@ -39,22 +39,17 @@ const Login = () => {
           alert("Tienes acceso a la web");
           console.log("Tu usuario tiene acceso a la web")
           console.log('login', login) //login no actualizado
+          setUser(mailLogin);
+          alert(user);
         }
         else {
           alert("la contraseña no coincide");
           console.log("Tu usuario NO tiene acceso a la web")
           console.log('login', login) //login no actualizado
-
         }
       }
     });
-
   };
-
-  /*  TERNARIO DE CONTROL
-  (login === true)
-  ? alert("Tienes acceso a la webs")
-  : alert("NO TIENES ACCESO")) */
 
 
   return (
@@ -85,15 +80,15 @@ const Login = () => {
                 type="button"
                 onClick={handleUserLogin}
               >
-                Sign in
+                Log In
               </Button>
             </form>
           </Modal.Body>
 
         </ContainerLogin>
         <Modal.Footer bsPrefix="modal-footer">
-          <ModalFoot>
-            {(login === true)
+          <ModalFoot>       {/* TERNARIO DE CONTROL */}
+            {(user)
               ? <Pgreen>Usuario válido</Pgreen>
               : <Pred>Introduce unas credenciales válidas</Pred>}
             {/*  <p>{`${login}`}</p> */}

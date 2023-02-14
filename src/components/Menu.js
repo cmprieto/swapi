@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
 
 
-const Menu = ({ visible }) => {
+const Menu = ({ user }) => {
   const { id } = useParams();
   const location = useLocation();
   const [name, setName] = useState('hhhh');
@@ -16,7 +16,7 @@ const Menu = ({ visible }) => {
   }, [id]);
 
   console.log('name', name);
-  console.log('visible', visible);
+  /*   console.log('visible', visible); */
 
   return (
     <Nav>
@@ -24,9 +24,9 @@ const Menu = ({ visible }) => {
         <li>
           <NavLink to={process.env.PUBLIC_URL + "/"}>Home</NavLink>
         </li>
-        <li>{visible && (<p>/</p>)}</li>
+        <li>{user && (<p>/</p>)}</li>
         <li>
-          {visible && (<NavLink to={process.env.PUBLIC_URL + '/Characters/'}>Characters</NavLink>)}
+          {user && (<NavLink to={process.env.PUBLIC_URL + '/Characters/'}>Characters</NavLink>)}
         </li>
         <li>{location.state && (<p>/</p>)}</li>
         <li>

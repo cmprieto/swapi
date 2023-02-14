@@ -15,7 +15,8 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const location = useLocation();
   const [isVisible, setIsVisible] = useState(true);
-  const { shows, setShows, showUp, setShowUp } = useCartContext();
+
+  const { shows, setShows, showUp, setShowUp, user, setUser } = useCartContext();
 
   useEffect(() => {
     setIsVisible(location.pathname.includes('Character'));
@@ -24,22 +25,24 @@ const Header = () => {
   console.log('location.pathname', location.pathname);
   console.log('isVisible', isVisible);
   const handleShow = () => setShows(true);
-  const handleShowUp = () => setShowUp(true);
-
+  const handleRegister = () => setShowUp(true);
+  const handleLogout = () => setUser(null);
   return (
     <Fragment>
       <HeaderLogo>
         <Link to={process.env.PUBLIC_URL + '/'}><img src={logoSW} width="25%" alt="StarWars" /></Link>
         <div>
-          <ButtonLog onClick={handleShow}>LOGIN</ButtonLog>
-          {shows && <Login />}
-          <ButtonLog onClick={handleShowUp}>SIGN UP</ButtonLog>
+          {user ? (<ButtonLog onClick={handleLogout}>SIGN OUT</ButtonLog>) : (<ButtonLog onClick={handleShow}>SIGN IN</ButtonLog>)
+          }
+          {shows && <Login />}       {/*  OJO SI DA ALGUN FALLO REVISAR ESTO MUESTRA COMPONENTE LOGIN SI CLICKAMOS BOTON SIGNIN*/}
+          {!user && <ButtonLog onClick={handleRegister}>REGISTER</ButtonLog>}
+
           {showUp && <Signup />}
         </div>
       </HeaderLogo>
       <Cabecera>
-        <Menu visible={isVisible} />
-        {isVisible && <Pagination />}
+        <Menu user={user} />
+        {user && <Pagination />}
       </Cabecera>
     </Fragment>
   );

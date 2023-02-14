@@ -10,10 +10,11 @@ const Provider = ({ children }) => {
   const [TotalNumberItemsPages, setTotalNumberItemsPages] = useState(1);
   const [shows, setShows] = useState(false);
   const [showUp, setShowUp] = useState(false);
+  const [user, setUser] = useState('');
 
   return (
     <AppContext.Provider
-      value={{ Characters, setCharacters, TotalNumberItemsPages, setTotalNumberItemsPages, shows, setShows, showUp, setShowUp }}>
+      value={{ Characters, setCharacters, TotalNumberItemsPages, setTotalNumberItemsPages, shows, setShows, showUp, setShowUp, user, setUser }}>
       {children}
     </AppContext.Provider>
   );
