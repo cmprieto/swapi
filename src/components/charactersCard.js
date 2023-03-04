@@ -1,9 +1,8 @@
-import React from 'react';
 import { Fragment } from "react";
 import { useLocation } from "react-router-dom";
-import { Card, Ul2 } from "../styled.js";
+import { Card, Ul2, Cont } from "../styled.js";
 import { useParams } from "react-router-dom";
-import "../App.css";
+import FilmsListContainer from "./FilmsListContainer.js";
 
 
 const CharactersCard = () => {
@@ -14,6 +13,11 @@ const CharactersCard = () => {
 
   return (
     <Fragment>
+      {console.log('personaje', personaje)}
+      {console.log('personajefilm', personaje.films[0])}
+      {console.log('personajespecies', personaje.species[0])}
+      {console.log('personajestarships', personaje.starships[0])}
+
       <Card>
         <br />
         <img
@@ -40,6 +44,9 @@ const CharactersCard = () => {
           </Ul2>
         </div>
       </Card>
+      <br />
+
+      <FilmsListContainer prop={personaje.films} ></FilmsListContainer>
 
     </Fragment>
   );

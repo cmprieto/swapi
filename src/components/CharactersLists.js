@@ -1,7 +1,7 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import { useCartContext } from "../application/Provider.js";
-import { CharactersListsContainer, linkStyle, CardContainer } from "../styled.js";
-import { Link } from "react-router-dom";
+import { CharactersListsContainer } from "../styled.js";
+import Character from "./Character.js";
 import "../App.css";
 
 const CharactersLists = () => {
@@ -16,8 +16,9 @@ const CharactersLists = () => {
     <Fragment>
       <CharactersListsContainer>
         {Characters &&
-          Characters.map((e) => {
+          Characters.map((e, index) => {
             /*EXTRAER ID DE URL DE api*/
+            console.log('e', e);
             direccion = e.url;
             control = direccion.substring(30, 31);
             //ternario ->para obteber id varia si la id es una cifra o dos. hay que extraerlo con ternario
@@ -28,27 +29,10 @@ const CharactersLists = () => {
             console.log("control es " + control + " direccion es " + ids);
 
             return (
-              <li key={e.url}>
-                <Link to={process.env.PUBLIC_URL + `/Character/${ids}`} state={e} style={linkStyle}>
-                  {console.log('Personaje', e)}
-                  <CardContainer>
-                    {/*ESTILOS EN app.css -> pasarlos a styledcomp*/}
-                    <img
-                      src={
-                        "https://starwars-visualguide.com/assets/img/characters/" +
-                        ids +
-                        ".jpg"
-                      }
-                      alt="characters"
-                      width="75%"
-                      height="75%"
-                    ></img>
-                    <div>{e.name}</div>
-                  </CardContainer>
-                </Link>
-              </li>
+              <Character element={e} i={index} ident={ids} />
             );
           })}
+        {/* <button>Ver más personajes</button> */}
       </CharactersListsContainer>
     </Fragment>
   );

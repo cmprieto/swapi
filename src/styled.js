@@ -25,7 +25,6 @@ export const GlobalStyle = createGlobalStyle`
 export const CharactersListsContainer = styled.ul`    //FICHAS DE PERSONAJES 
   display: flex;
   flex-direction: row;
-  /* justify-content: center; */
   flex-wrap: wrap;
   align-content: center;
   background-color: transparent;
@@ -34,13 +33,6 @@ export const CharactersListsContainer = styled.ul`    //FICHAS DE PERSONAJES
   list-style: none;
   padding: 0;
 
-  /* padding: 0px 20px; */
-  /*  background-color: #a9a9a9; */
-  /*   border-bottom-left-radius: 1em;
-  border-bottom-right-radius: 1em;
-  border-top: 3px solid black; */
-  /* box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.16); */
-  /* margin: 1em ; */
   li {
     padding: 0.4rem;
     max-width: 20%;
@@ -61,9 +53,9 @@ export const CardContainer = styled.div`
   background-color: transparent;
   transition: 0.3s;
    color: #282c34;  
+
    img{
     border-radius: 5px 5px 0 0; 
-
     width: 100%;
   } 
   div{
@@ -104,6 +96,8 @@ export const Ul2 = styled.ul`   //FICHA CHARACTERS CARD
     text-decoration: uppercase;
   }
 `;
+
+
 
 /* export const Panel = styled.div`
   background-color: salmon;
@@ -333,35 +327,86 @@ export const Pred = styled.p`
   font-size: 0.9em;
   color: red;
 `;
-/* The Modal (background) */
-/* 
-export const Modal = styled.div`
-  display: none; /* Hidden by default */
-/*   position: fixed; /* Stay in place 
-  z-index: 1; /* Sit on top 
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width 
-  height: 100%; /* Full height 
-  overflow: auto; /* Enable scroll if needed 
-  background-color: rgb(0,0,0); /* Fallback color 
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity 
-`;
- */
-/* Modal Content/Box */
 
-/* The Close Button */
-/* .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-} */
-/* 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-} 
-`;*/
+export const Pyellow = styled.p`
+  font-size: 1rem;
+  color: yellow;
+`;
+
+
+export const FilmsListsContainer = styled.div`    //FICHAS DE PELICULAS 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: auto;
+  background-color: transparent;
+  
+   ${mobile} {
+      flex-wrap:wrap;
+  }
+`;
+
+export const CardFilms = styled.div`
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  padding: 0.5rem;
+  justify-content: space-between; 
+
+  /* On mouse-over, add a deeper shadow */
+/*   &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  } */
+&:hover {
+  opacity:0.8;
+  }
+
+img{
+    background-color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    max-width: 150px;
+  }
+
+  /* Add some padding inside the card container */
+  p {
+    
+    text-align: center;
+  }
+
+  ${mobile} {
+    flex-direction: column;
+    align-items: center;
+    p{
+      width: 90%;
+    }
+    img{
+      width:90%;
+    }
+  }
+`;
+
+export const Container2 = styled.div`
+ display:flex;
+ flex-direction:column;
+ justify-content: flex-end;
+
+ width: 70vw;
+`;
+
+export const Div = styled.div`
+width:50%;
+display:flex;
+justify-content: flex-end;
+
+`;
+export const P = styled.p`
+
+    font-size: 1.5em;
+    text-align: left;
+    color: grey;
+    text-decoration: uppercase;
+    border-bottom: 2px solid grey;
+    max-width: 90% ;
+`

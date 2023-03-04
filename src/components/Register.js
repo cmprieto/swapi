@@ -4,8 +4,8 @@ import { Modal, Button } from "react-bootstrap";
 import { ContainerLogin, InputText } from "../styled.js";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
-const Signup = () => {
-  const { showUp, setShowUp } = useCartContext();
+const Register = () => {
+  const { showRegister, setShowRegister } = useCartContext();
   const [users, setUsers] = useLocalStorage("users", []);
   const [mail, setMail] = useState("");
   const [psw, setPsw] = useState("");
@@ -14,7 +14,7 @@ const Signup = () => {
 
 
   const handleClose = () => {
-    setShowUp(false);
+    setShowRegister(false);
     setAddNewUser(false);
   }
 
@@ -50,7 +50,7 @@ const Signup = () => {
 
   return (
     <Fragment>
-      <Modal show={showUp} onHide={handleClose}>
+      <Modal show={showRegister} onHide={handleClose}>
         <Modal.Header closeButton bsPrefix="modal-header">
           <Modal.Title>CREATE YOUR ACCOUNT</Modal.Title>
         </Modal.Header>
@@ -107,4 +107,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Register;

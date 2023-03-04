@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/swapi/static/css/main.21c73dbd.css",
-    "main.js": "/swapi/static/js/main.a8fa2303.js",
+    "main.js": "/swapi/static/js/main.edd8e024.js",
     "static/media/starWars.jpg": "/swapi/static/media/starWars.5b50e569d05046315c93.jpg",
     "static/media/Luz.gif": "/swapi/static/media/Luz.b4292bbfa58ff2f61669.gif",
     "static/media/stars.png": "/swapi/static/media/stars.90c266f7d69f1ffb6137.png",
@@ -13,10 +13,10 @@
     "static/media/roboto-condensed-v25-latin-regular.woff2": "/swapi/static/media/roboto-condensed-v25-latin-regular.bb7a4e73944870e385e1.woff2",
     "index.html": "/swapi/index.html",
     "main.21c73dbd.css.map": "/swapi/static/css/main.21c73dbd.css.map",
-    "main.a8fa2303.js.map": "/swapi/static/js/main.a8fa2303.js.map"
+    "main.edd8e024.js.map": "/swapi/static/js/main.edd8e024.js.map"
   },
   "entrypoints": [
     "static/css/main.21c73dbd.css",
-    "static/js/main.a8fa2303.js"
+    "static/js/main.edd8e024.js"
   ]
 }

@@ -7,8 +7,8 @@ import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const Login = () => {
   const {
-    shows,
-    setShows, user, setUser,
+    showLogin,
+    setShowLogin, user, setUser,
   } = useCartContext();
 
   const [mailLogin, seteMailLogin] = useState('');
@@ -17,7 +17,7 @@ const Login = () => {
   const [login, setLogin] = useLocalStorage("login", false);
 
   const handleClose = () => {
-    setShows(false);
+    setShowLogin(false);
   };
 
   const handleUserLogin = () => {
@@ -36,11 +36,11 @@ const Login = () => {
           console.log('E.PSW', e.psw)
           // VERIFICA CONTRASEÑA
           setLogin(true);
-          alert("Tienes acceso a la web");
+          /* alert("Tienes acceso a la web"); */
           console.log("Tu usuario tiene acceso a la web")
           console.log('login', login) //login no actualizado
           setUser(mailLogin);
-          alert(user);
+          /* alert(user); */
         }
         else {
           alert("la contraseña no coincide");
@@ -54,7 +54,7 @@ const Login = () => {
 
   return (
     <Fragment>
-      <Modal show={shows} onHide={handleClose}>
+      <Modal show={showLogin} onHide={handleClose}>
         <Modal.Header closeButton bsPrefix="modal-header">
           <Modal.Title>SIGN IN</Modal.Title>
         </Modal.Header>
