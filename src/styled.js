@@ -52,23 +52,25 @@ export const CardContainer = styled.div`
   margin: 1rem;
   background-color: transparent;
   transition: 0.3s;
-   color: #282c34;  
+  color: #282c34;  
 
-   img{
-    border-radius: 5px 5px 0 0; 
+  img{
+    border-radius: 8px 8px 0 0; 
     width: 100%;
   } 
   div{
     font-size:1.5vw; 
     background-color: whitesmoke;
- 
-  
   }
   &:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  transform: translateY(5%);
+  transform: translateY(5%); 
   opacity:0.8;
-}
+ 
+  }
+  p{
+    font-weight:600;
+  }
 `;
 
 export const Title = styled.h1`
@@ -84,16 +86,18 @@ export const Ul2 = styled.ul`   //FICHA CHARACTERS CARD
   list-style: none;
 
   li {
-    font-size: 0.85rem;
+    font-size: 1rem;
     text-align: left;
     color: grey;
-    text-decoration: uppercase;
+    text-transform: uppercase;
+    font-weight:500;
   }
   li:first-child {
     font-size: 1.5em;
     text-align: left;
     color: black;
-    text-decoration: uppercase;
+    text-transform: uppercase;
+    font-weight:bold;
   }
 `;
 
@@ -114,32 +118,40 @@ export const Card = styled.div`
   background-color: transparent;
   flex-direction: row;
   justify-content: center;
-  padding: 1rem;
-
+  padding: 2rem;
+  border-radius: 8px;
   /* On mouse-over, add a deeper shadow */
   &:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 whitesmoke;
+    
   }
-
   img{
     width:25%;
     height:25%;
+     &:hover {
+    box-shadow: 0 4px 8px 0 whitesmoke;
+    
+  }
   }
 
   /* Add some padding inside the card container */
   div {
     background-color: white;
     padding: 2px 16px;
-    width: 50%;
+    min-width: 50%;
+         &:hover {
+    box-shadow: 0 4px 8px 0 whitesmoke;
+    
+  }
   }
   ${mobile} {
     flex-direction: column;
     align-items: center;
     div{
-      width: 90%;
+      width: 70%;
     }
     img{
-      width:90%;
+      width:70%;
     }
   }
 
@@ -148,12 +160,14 @@ export const Card = styled.div`
 export const Nav = styled.li`
   ul {
     font-size: 0.9rem;
-    letter-spacing: 1.05rem;
+    letter-spacing: 1rem;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: transparent;
+    text-transform: uppercase;
+    font-weight:600;
   }
   li {
     float: left;
@@ -196,7 +210,8 @@ export const Cabecera = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  font-size: 0.8rem;
+  width:100%;
+  border-bottom: 2px solid #343434;
 `;
 
 export const Container = styled.div`
@@ -265,9 +280,7 @@ export const ButtonLog = styled.button`
   display: inline;
   opacity: 0.6;
   background-color: black;
-  
-  
-  // PARA ELIMINAR EL UNDERLINE DE BOTON CON LINK
+    // PARA ELIMINAR EL UNDERLINE DE BOTON CON LINK
   &:link {
     text-decoration: none;
   }
@@ -301,6 +314,7 @@ export const ContainerLogin = styled.div`
     min-width:90%;
   }
 `;
+
 export const InputText = styled.input`
   font-size: 1em;
   padding: 5px;
@@ -329,8 +343,10 @@ export const Pred = styled.p`
 `;
 
 export const Pyellow = styled.p`
-  font-size: 1rem;
-  color: yellow;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white;
+  line-height:1.5rem;
 `;
 
 
@@ -365,13 +381,12 @@ export const CardFilms = styled.div`
 img{
     background-color: white;
     padding: 2px 8px;
-    border-radius: 10px;
+    border-radius: 8px;
     max-width: 150px;
   }
 
   /* Add some padding inside the card container */
   p {
-    
     text-align: center;
   }
 
@@ -390,23 +405,27 @@ img{
 export const Container2 = styled.div`
  display:flex;
  flex-direction:column;
- justify-content: flex-end;
-
- width: 70vw;
+ justify-content: center;
 `;
 
-export const Div = styled.div`
-width:50%;
-display:flex;
-justify-content: flex-end;
 
-`;
 export const P = styled.p`
-
     font-size: 1.5em;
-    text-align: left;
+    text-align: center;
     color: grey;
-    text-decoration: uppercase;
-    border-bottom: 2px solid grey;
-    max-width: 90% ;
-`
+    margin-bottom:0;
+     text-transform: uppercase;
+`;
+
+export const Divider = styled.hr`
+
+    border-top: 8px solid #bbb;
+    border-radius: 5px;
+    width: 600px;
+    margin: 0.5rem auto;
+
+    &:hover{
+      border-top: 8px solid yellow;
+      margin: 0.5rem auto;
+    }
+`;

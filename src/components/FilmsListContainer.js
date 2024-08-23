@@ -1,14 +1,14 @@
 import FilmsList from "./FilmsList";
-import { FilmsListsContainer, P, Container2, Div } from '../styled';
+import { FilmsListsContainer, P, Container2, Div, Divider } from '../styled';
 
 
 const FilmsListContainer = ({ prop }) => {
     console.log('filmsprop', prop);
     return (
         <Container2>
-            <Div>
-                <P>Appearances</P>
-            </Div>
+
+            <P>Appearances</P>
+            <Divider />
             <FilmsListsContainer>
                 {prop &&
                     prop.map((e, i) => {

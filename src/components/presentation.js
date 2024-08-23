@@ -1,9 +1,7 @@
-import React from 'react';
 import { Fragment } from "react";
 import { Container, Img, Button } from "../styled.js";
 import "../App.css";
 import luz from "../img/starWars.jpg";
-import Light from "../img/Luz.gif";
 import { Link } from 'react-router-dom';
 import { linkStyle } from '../styled';
 

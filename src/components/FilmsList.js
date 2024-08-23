@@ -5,7 +5,7 @@ import "../App.css";
 const FilmsList = ({ proper }) => {
     const [filmsList, setFilmsList] = useState(null);
     const [opening, setOpening] = useState('');
-    const [episodeId, setEpisodeId] = useState(0);
+    const [episodeId, setEpisodeId] = useState(null);
 
 
     useEffect(() => {
@@ -27,8 +27,6 @@ const FilmsList = ({ proper }) => {
             return (episodeId + 3);
         }
     }
-
-
     return (
         <div>
             {episodeId &&

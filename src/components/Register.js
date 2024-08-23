@@ -87,7 +87,7 @@ const Register = () => {
               <Button
                 variant="secondary"
                 type="submit"
-              /* onClick={handleUsers} */
+               onClick={handleUsers} 
               >
                 Create an account
               </Button>

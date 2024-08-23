@@ -21,7 +21,7 @@ const CharactersLists = () => {
             console.log('e', e);
             direccion = e.url;
             control = direccion.substring(30, 31);
-            //ternario ->para obteber id varia si la id es una cifra o dos. hay que extraerlo con ternario
+            //ternario -> para obteber id varia si la id es una cifra o dos. hay que extraerlo con ternario
             control === "/"
               ? (ids = direccion.substring(29, 30))
               : (ids = direccion.substring(29, 31));
@@ -29,7 +29,7 @@ const CharactersLists = () => {
             console.log("control es " + control + " direccion es " + ids);
 
             return (
-              <Character element={e} i={index} ident={ids} />
+              <Character element={e} key={index} ident={ids} /> //he cambiado 1 i por key 22/8/2024
             );
           })}
         {/* <button>Ver más personajes</button> */}

@@ -5,7 +5,6 @@ const People = () => {
   return (
     <Fragment>
       <CharactersLists />
-
     </Fragment>
   );
 }

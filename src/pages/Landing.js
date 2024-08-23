@@ -1,4 +1,3 @@
-import React from "react";
 import { Fragment } from "react";
 import { Pred } from "../styled";
 

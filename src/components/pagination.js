@@ -1,5 +1,4 @@
 import ReactPaginate from "react-paginate";
-import React from "react";
 import { useCartContext } from '../application/Provider.js';
 import "../App.css";
 import { useNavigate } from "react-router-dom";

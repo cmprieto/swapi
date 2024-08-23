@@ -1,35 +1,24 @@
-import { Fragment } from "react";
 import { useLocation } from "react-router-dom";
-import { Card, Ul2, Cont } from "../styled.js";
+import { Card, Ul2 } from "../styled.js";
 import { useParams } from "react-router-dom";
 import FilmsListContainer from "./FilmsListContainer.js";
 
 
 const CharactersCard = () => {
-
   const location = useLocation();
   const personaje = location.state;
   const { id } = useParams();
 
   return (
-    <Fragment>
+    <div>
       {console.log('personaje', personaje)}
-      {console.log('personajefilm', personaje.films[0])}
-      {console.log('personajespecies', personaje.species[0])}
-      {console.log('personajestarships', personaje.starships[0])}
 
       <Card>
         <br />
         <img
-          src={
-            "https://starwars-visualguide.com/assets/img/characters/" +
-            id +
-            ".jpg"
-          }
+          src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}
           alt="characters"
-
         ></img>
-
         <div>
           <br />
           <Ul2>
@@ -46,9 +35,9 @@ const CharactersCard = () => {
       </Card>
       <br />
 
-      <FilmsListContainer prop={personaje.films} ></FilmsListContainer>
+      {personaje.films && <FilmsListContainer prop={personaje.films} ></FilmsListContainer>}
 
-    </Fragment>
+    </div>
   );
 };
 export default CharactersCard;

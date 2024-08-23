@@ -1,7 +1,7 @@
 import { linkStyle, CardContainer } from '../styled.js';
 import { Link } from 'react-router-dom';
 
-const Character = ({ element, ident }) => {
+const Character = ({ element, ident, i }) => {
 
     return (
         <li key={element.url}>
@@ -19,7 +19,7 @@ const Character = ({ element, ident }) => {
                         width="75%"
                         height="75%"
                     ></img>
-                    <div>{element.name}</div>
+                    <div><p>{element.name}</p></div>
                 </CardContainer>
             </Link>
         </li>

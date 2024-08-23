@@ -1,4 +1,3 @@
-import React from 'react';
 import { Fragment, useEffect, useState } from 'react';
 import { useCartContext } from '../application/Provider.js';
 import Menu from "./Menu";
