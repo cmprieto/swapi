@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
-import { Card, Ul2 } from "../styled.js";
+import { Card, Ul2 } from "./CharactersCard.styles.js";
 import { useParams } from "react-router-dom";
-import FilmsListContainer from "./FilmsListContainer.js";
+import FilmsListContainer from "../FilmsListContainer/FilmsListContainer.js";
 
 
 const CharactersCard = () => {

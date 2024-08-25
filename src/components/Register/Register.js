@@ -1,8 +1,8 @@
 import { Fragment, useState } from "react";
-import { useCartContext } from '../application/Provider.js';
+import { useCartContext } from '../../application/Provider.js';
 import { Modal, Button } from "react-bootstrap";
-import { ContainerLogin, InputText } from "../styled.js";
-import { useLocalStorage } from "../hooks/useLocalStorage";
+import { ContainerLogin, InputText } from "./Register.styles.js";
+import { useLocalStorage } from "../../hooks/useLocalStorage.js";
 
 const Register = () => {
   const { showRegister, setShowRegister } = useCartContext();
@@ -25,7 +25,6 @@ const Register = () => {
     /*  alert('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'); */
     addNewUser && setUsers([...users, { mail, psw, username }]);
     setAddNewUser(true);
-
   }
 
 
@@ -34,7 +33,7 @@ const Register = () => {
   const handleBlur = () => {
     /* alert('blurrrrrrrrrrrrrrrrr'); */
     console.log('users', users);
-    users.map((e, i) => {    // RECORRE USUARIOS PARA VER SI EXISTE USUARIO
+    users.forEach((e, i) => {    // RECORRE USUARIOS PARA VER SI EXISTE USUARIO
       console.log('e', e);
       /*  alert('i es ' + i); */
       if (e.mail === mail /* || e.username === username */) {
@@ -87,16 +86,13 @@ const Register = () => {
               <Button
                 variant="secondary"
                 type="submit"
-               onClick={handleUsers} 
+                onClick={handleUsers} 
               >
                 Create an account
               </Button>
             </form>
-
           </Modal.Body>
         </ContainerLogin>
-
-
         <Modal.Footer bsPrefix="modal-footer">
           <Button variant="secondary" onClick={handleClose}>
             Close

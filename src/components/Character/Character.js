@@ -1,4 +1,4 @@
-import { linkStyle, CardContainer } from '../styled.js';
+import { linkStyle, CardContainer } from './Character.styles';
 import { Link } from 'react-router-dom';
 
 const Character = ({ element, ident, i }) => {

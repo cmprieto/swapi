@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
-import { useCartContext } from "../application/Provider.js";
-import "../App.css";
+import { useCartContext } from "../../application/Provider.js";
+import "../../App.css";
 import { Modal, Button } from "react-bootstrap";
 import {
   ContainerLogin,
@@ -8,12 +8,11 @@ import {
   Pgreen,
   Pred,
   ModalFoot,
-} from "../styled.js";
-import { useLocalStorage } from "../hooks/useLocalStorage";
+} from "./Login.styles.js";
+import { useLocalStorage } from "../../hooks/useLocalStorage.js";
 
 const Login = () => {
   const { showLogin, setShowLogin, user, setUser } = useCartContext();
-
   const [mailLogin, seteMailLogin] = useState("");
   const [passLogin, setPassLogin] = useState("");
   const [users] = useLocalStorage("users", []);
@@ -30,7 +29,7 @@ const Login = () => {
     console.log("passLogin", passLogin);
 
     users &&
-      users.map((e, i) => {
+      users.forEach((e, i) => {
         console.log("e", e);
         /*  alert('i es ' + i); */
         if (mailLogin === e.mail) {

@@ -8,12 +8,12 @@ const Swapi = () => {
 
 
   useEffect(() => {
-    const getComments = async () => {
+    const getPeople = async () => {
       const res = await axios.get(`https://swapi.dev/api/people/?page=1`);    // SIEMPRE RECARGA PAG 1 DE API AL REFRESCAR, NO RESPETA CURRENTPAGE
       setCharacters(res.data.results);
       setTotalNumberItemsPages(res.data.count);  // OBTENEMOS VALOR NUMERO MAX ITEMS Y LO / NUMERO ITEMS POR PAGINA (10)        
     };
-    getComments();
+    getPeople();
   }, []);
 
   console.log('PersonajesAxios', Characters);

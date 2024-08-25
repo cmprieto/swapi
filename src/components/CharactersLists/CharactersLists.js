@@ -1,8 +1,8 @@
 import { Fragment } from "react";
-import { useCartContext } from "../application/Provider.js";
-import { CharactersListsContainer } from "../styled.js";
-import Character from "./Character.js";
-import "../App.css";
+import { useCartContext } from "../../application/Provider.js";
+import { CharactersListsContainer } from "./CharactersLists.styles.js";
+import Character from "../Character/Character.js";
+import "../../App.css";
 
 const CharactersLists = () => {
   const { Characters } = useCartContext();

@@ -1,5 +1,5 @@
-import FilmsList from "./FilmsList";
-import { FilmsListsContainer, P, Container2, Div, Divider } from '../styled';
+import FilmsList from "../FilmsList";
+import { FilmsListsContainer, P, Container2,  Divider } from './FilmsListContainer.styles';
 
 
 const FilmsListContainer = ({ prop }) => {

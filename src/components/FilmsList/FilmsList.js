@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Pyellow, CardFilms } from '../styled';
+import { Pyellow, CardFilms } from './FilmsList.styles';
+import "../../App.css";
 
-import "../App.css";
 const FilmsList = ({ proper }) => {
     const [filmsList, setFilmsList] = useState(null);
     const [opening, setOpening] = useState('');

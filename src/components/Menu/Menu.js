@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { Nav } from "../styled";
+import { Nav } from "./Menu.styles";
 import { useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';

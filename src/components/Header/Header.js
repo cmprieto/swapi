@@ -1,20 +1,19 @@
 import { Fragment, useEffect, useState } from 'react';
-import { useCartContext } from '../application/Provider.js';
-import Menu from "./Menu";
-import { Cabecera, ButtonLog, HeaderLogo } from "../styled.js";
-import logoSW from "../img/logoSW.jpg";
-import "../App.css";
-import Pagination from "./Pagination.js";
+import { useCartContext } from '../../application/Provider.js';
+import Menu from "../Menu/Menu.js";
+import { Cabecera, ButtonLog, HeaderLogo } from "./Header.styles";
+import logoSW from "../../img/logoSW.jpg";
+import "../../App.css";
+import Pagination from '../Pagination/index.js';
 import { useLocation } from "react-router-dom";
-import Login from "./Login";
-import Register from "./Register.js";
+import Login from "../Login/Login.js";
+import Register from "../Register/Register.js";
 import { Link } from "react-router-dom";
 
 
 const Header = () => {
   const location = useLocation();
   const [isVisible, setIsVisible] = useState(true);
-
   const { showLogin, setShowLogin, showRegister, setShowRegister, user, setUser } = useCartContext();
 
   useEffect(() => {
